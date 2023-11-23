@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Prescription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c9302c;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #5bc0de;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #46b8da;
+        }
+
+        .cancel-link {
+            background-color: #337ab7;
+        }
+
+        .cancel-link:hover {
+            background-color: #286090;
+        }
+    </style>
+</head>
+<body>
+    <h2>Delete Prescription</h2>
+
+    <form th:action="@{/prescriptions/delete}" method="post">
+        <!-- Prescription ID (hidden) -->
+        <input type="hidden" id="id" name="id" th:value="${prescription.id}" />
+
+        <p>Are you sure you want to delete the prescription for <strong th:text="${prescription.patientName}"></strong>?</p>
+
+        <button type="submit">Delete</button>
+    </form>
+
+    <!-- Separate links for Cancel and Back to Prescriptions List -->
+    <a th:href="@{/prescriptions/list}" class="cancel-link">Cancel</a>
+    <a th:href="@{/prescriptions/list}">Back to Prescriptions List</a>
+</body>
+</html>

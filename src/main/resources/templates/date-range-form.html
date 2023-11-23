@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Range Form</title>
+</head>
+<body>
+    <h2>Date Range Selection</h2>
+
+    <form th:action="@{/prescriptions/list}" method="get">
+        <!-- Start Date -->
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required/>
+
+        <!-- End Date -->
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required/>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

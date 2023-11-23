@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Prescription</title>
+
+    <!-- Add your CSS styles here -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <!-- Add your JavaScript code here -->
+    <script>
+        // You can add JavaScript code for additional interactivity here
+        // For example, handling user interactions, form validation, etc.
+    </script>
+</head>
+<body>
+    <h1>Welcome to Prescription</h1>
+    <nav>
+        <a th:href="@{/prescriptions/list}">View Prescriptions</a>
+        <a th:href="@{/prescriptions/create}">Create Prescription</a>
+        <a th:href="@{/prescriptions/reports/day-wise}">View Day-wise Report</a>
+        <a th:href="@{/api/v1/prescriptions/list}">View Prescriptions JSON Data</a>
+    </nav>
+</body>
+</html>
